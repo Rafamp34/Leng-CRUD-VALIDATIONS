@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="./imagenes/favi.jpg" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="./imagenes/imgloging.jpg" alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+                <form onsubmit="return validarFormulario()">
+                    <input type="text" id="username" placeholder="USERNAME" onchange="validarNombreUsuario()" />
+                    <div id="usernameHelp" style="visibility: hidden; color: red;">Nombre de usuario inválido. <br>(8-12 caracteres alfanuméricos)</div>
+                    <input type="password" id="password" placeholder="PASSWORD" onchange="validarContrasena()" />
+                    <div id="passwordHelp" style="visibility: hidden; color: red;">Contraseña inválida. <br>(8-15 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial)</div>
+                    <button type="submit" class="opacity">SUBMIT</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="">REGISTER</a>
+                    <a href="">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+<script src="./js/login.js"></script>
+</html>

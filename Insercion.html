@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Checkout</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./imagenes/favicart.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/insercion.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Abel">
+</head>
+<body class="align">
+    <div class="grid align__item">
+        <h2>Enter your payment information below</h2>
+        <div class="card">
+            <header class="card__header">
+                <h3 class="card__title">Payment Details</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="card__logo" width="140" height="43" viewBox="0 0 175.7 53.9"><style>.visa{fill:#fff;}</style><path class="visa" d="M61.9 53.1l8.9-52.2h14.2l-8.9 52.2zm65.8-50.9c-2.8-1.1-7.2-2.2-12.7-2.2-14.1 0-24 7.1-24 17.2-.1 7.5 7.1 11.7 12.5 14.2 5.5 2.6 7.4 4.2 7.4 6.5 0 3.5-4.4 5.1-8.5 5.1-5.7 0-8.7-.8-13.4-2.7l-2-.9-2 11.7c3.3 1.5 9.5 2.7 15.9 2.8 15 0 24.7-7 24.8-17.8.1-5.9-3.7-10.5-11.9-14.2-5-2.4-8-4-8-6.5 0-2.2 2.6-4.5 8.1-4.5 4.7-.1 8 .9 10.6 2l1.3.6 1.9-11.3M164.2 1h-11c-3.4 0-6 .9-7.5 4.3l-21.1 47.8h14.9s2.4-6.4 3-7.8h18.2c.4 1.8 1.7 7.8 1.7 7.8h13.2l-11.4-52.1m-17.5 33.6c1.2-3 5.7-14.6 5.7-14.6-.1.1 1.2-3 1.9-5l1 4.5s2.7 12.5 3.3 15.1h-11.9zm-96.7-33.7l-14 35.6-1.5-7.2c-2.5-8.3-10.6-17.4-19.6-21.9l12.7 45.7h15.1l22.4-52.2h-15.1"/><path fill="#F7A600" d="M23.1.9h-22.9l-.2 1.1c17.9 4.3 29.7 14.8 34.6 27.3l-5-24c-.9-3.3-3.4-4.3-6.5-4.4"/></svg>
+            </header>
+            <form action="" method="post" class="form" onsubmit="return validacion()">
+                <div class="card__holder form__field">
+                    <label for="card__holder" class="card__holder__label">Card Holder</label>
+                    <input type="text" id="card__holder" class="card__holder__input" onchange="validaCardHolder()">
+                    <p class="mensajeHelp" id="card__holderHelp" style="visibility: hidden;">Debe ingresar el titular de la tarjeta</p>
+                </div>
+                <div class="card__number form__field">
+                    <label for="card__number" class="card__number__label">Card Number</label>
+                    <input type="text" id="card__number" class="card__number__input" onchange="validaCardNumber()">
+                    <p class="mensajeHelp" id="card__numberHelp" style="visibility: hidden;">Debe ingresar un número de tarjeta válido</p>
+                </div>
+                <div class="card__expiration form__field">
+                    <label for="card__expiration__month" class="card__expiration__month">Expiration</label>
+                    <div class="card__expiration__container">
+                        <select name="card__expiration__month" id="card__expiration__month" onchange="validaExpiration()">
+                            <option value="">Select Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select name="card__expiration__year" id="card__expiration__year" onchange="validaExpiration()">
+                            <option value="">Select Year</option>
+                            <option value="1">2024</option>
+                            <option value="2">2025</option>
+                            <option value="3">2026</option>
+                            <option value="4">2027</option>
+                            <option value="5">2028</option>
+                            <option value="6">2029</option>
+                            <option value="7">2030</option>
+                        </select><br>
+                        <p class="mensajeHelp" id="card__expirationHelp" style="visibility: hidden;">Debe seleccionar una fecha de expiración válida</p>
+                    </div>
+                </div>
+
+                <div class="card__ccv form__field">
+                    <label for="card__ccv" class="card__ccv__label">CCV</label>
+                    <input type="text" id="card__ccv" class="card__ccv__input" oninput="limitarCCV(event)" maxlength="3">
+                    <p class="mensajeHelp" id="card__ccvHelp" style="visibility: hidden;">Debe ingresar un CCV válido</p>
+                </div>
+                <div>
+                    <br><br><br><br><br><br>
+                    <input type="checkbox" id="terminos" name="terminos" value="terminos">
+                    <label for="terminos"><a href="#" id="mostrarTerminos">Acepta los <u>Términos y Condiciones</u></a></label>
+                    <p class="mensajeHelp" id="terminosHelp" style="visibility: hidden;">Debe aceptar los términos y condiciones</p>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="ventanaEmergente" class="ventana-emergente">
+        <span id="cerrarVentana" class="ventana-emergente__cerrar" onclick="cerrarVentana()">X</span>
+        <h3>Términos y Condiciones para el uso de la Tarjeta de Crédito</h3>
+        <p>-Responsabilidad del titular de la tarjeta: El titular de la tarjeta es responsable de todas las transacciones realizadas con la tarjeta, incluidas las transacciones autorizadas por terceros.</p>
+        <p>-Uso adecuado de la tarjeta: La tarjeta de crédito solo debe usarse para transacciones legítimas y autorizadas. El titular de la tarjeta no debe realizar transacciones fraudulentas ni utilizar la tarjeta para actividades ilegales.</p>
+        <p>-Protección de la información personal: El titular de la tarjeta es responsable de proteger la información personal asociada con la tarjeta, incluidos el número de tarjeta, la fecha de vencimiento y el código de seguridad (CCV).</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="./js/insercion.js"></script>
+
+</body>
+</html>

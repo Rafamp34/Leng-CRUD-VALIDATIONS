@@ -1,0 +1,13 @@
+/***********************************************************************************/
+/*                        Hoja de estilo de List.html                              */
+/*                        Author: Rafael Moncayo                                   */
+/*                        version: 1.0                                             */
+/*                        fecha: enero 2024                                        */
+/*                        Comments: Ejercicios de List                             */
+/***********************************************************************************/
+
+body {
+  background-image: url('../imagenes/fondolist.jpg');
+  background-size: cover; /* Cubre todo el fondo de la página */
+  background-position: center; /* Centra la imagen de fondo */
+}

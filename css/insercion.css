@@ -1,0 +1,327 @@
+/***********************************************************************************/
+/*                        Hoja de estilo de Insercion.html                         */
+/*                        Author: Rafael Moncayo                                   */
+/*                        version: 1.0                                             */
+/*                        fecha: enero 2024                                        */
+/*                        Comments: Ejercicios de Insercion                        */
+/***********************************************************************************/
+
+/* Mixin clearfix */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* Variables */
+:root {
+  --base-bgcolor: #f1f1f1;
+  --base-color: #171a1c;
+  --base-font-weight: 300;
+  --base-font-size: 1rem;
+  --base-line-height: 1.5;
+  --base-font-family: 'Source Sans Pro';
+  --base-font-family-fallback: sans-serif;
+
+  --card-bgcolor: #171a1c;
+  --card-border-radius: 1rem;
+  --card-color: #47474e;
+  --card-padding: 2rem;
+
+  --input-color: #fff;
+
+  --link-color: #171a1c;
+
+  --grid-max-width: 36rem;
+  --grid-width: 90%;
+  --background-image: url('../imagenes/fondoinser.jpg'); 
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+select {
+	visibility: visible !important;
+}
+html {
+  height: 100%;
+}
+
+body {
+	background-color: var(--base-bgcolor);
+	background-image: var(--background-image);
+	background-size: cover;
+	background-position: center;
+	color: var(--base-color);
+	font: var(--base-font-weight) var(--base-font-size)/var(--base-line-height) var(--base-font-family), var(--base-font-family-fallback);
+	margin: 0;
+	min-height: 100%;
+	padding: 5vw 0;
+}
+.error {
+    
+    color: red; /* Color del texto de ayuda en rojo */
+}
+
+.input-error {
+    box-shadow: 0 0 10px red; /* Establece una sombra roja alrededor del input */
+}
+
+/* Alignment utilities */
+.align {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.align__item--start {
+  align-self: flex-start;
+}
+
+.align__item--end {
+  align-self: flex-end;
+}
+
+/* Text alignment utility */
+.text--center {
+  text-align: center;
+}
+
+/* Card component */
+.card {
+	background-color: var(--card-bgcolor);
+	border-radius: var(--card-border-radius);
+	color: var(--card-color);
+	padding: var(--card-padding);
+	font-family: Abel;
+}
+
+.card__header {
+	display: flow-root;
+	margin-bottom: 4rem;
+}
+
+.card__title {
+	color: #fff;
+	float: left;
+	font-size: 1.5rem;
+}
+
+.card__logo {
+  float: right;
+}
+
+.card__number__input {
+  font-size: 2rem;
+}
+
+.card__expiration {
+  float: left;
+}
+
+.card__ccv {
+  float: right;
+}
+
+.card__ccv__input {
+  width: 1.75rem;
+}
+.ventana-emergente {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border: 1px solid black;
+	z-index: 9999;
+	display: none;
+}
+
+.ventana-emergente__cerrar {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+#mostrarTerminos {
+	color: white;
+	text-decoration: none;
+}
+.submit-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+.ui-selectmenu-button {
+	float: left;
+	margin-right: 2rem;
+}
+
+.card__expiration__month{
+	text-decoration: underline;
+	font-size: 17px;
+	color: rgb(66, 66, 66);
+}
+
+.card__holder__label{
+	text-decoration: underline;
+	font-size: 20px;
+	color: rgb(66, 66, 66);
+}
+
+.card__number__label{
+	text-decoration: underline;
+	font-size: 20px;
+	color: rgb(66, 66, 66);
+}
+/* Form styles */
+input {
+	background-color: transparent;
+	border: 0;
+	color: var(--input-color);
+	font: inherit;
+	width: auto;
+}
+
+input:focus, input:not(:focus) {
+	border: 1px solid #ffffff; 
+	border-radius: 15px;
+    padding: 1px;
+	outline:rgb(23,26,28); 
+	background-color: rgb(23,26,28); 
+}
+
+label {
+  display: block;
+}
+
+.form::before,
+.form::after {
+	content: " ";
+	display: table;
+}
+
+.form::after {
+  clear: both;
+}
+
+.form__field {
+  margin-bottom: 1.5rem;
+}
+
+.form input {
+  outline: 0;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+}
+
+/* Grid */
+.grid {
+	margin: 0 auto;
+	max-width: var(--grid-max-width);
+	width: var(--grid-width);
+}
+
+/* Headings */
+h1,
+h3 {
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+	margin: 0 0 0.5rem;
+	color: rgb(50,147,225);
+	text-decoration: underline;
+  }
+
+/* SVG */
+svg {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+}
+
+/* Select menu */
+.ui-selectmenu-menu {
+	display: none;
+	font-family: Abel;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	z-index: 999;
+}
+
+.ui-selectmenu-menu li {
+	background-color: #171a1c;
+	color: #fff;
+	padding: 0.25rem 1rem;
+	cursor: pointer;
+}
+
+.ui-selectmenu-menu li.ui-state-focus {
+  background-color: #47474e;
+}
+
+.ui-selectmenu-menu .ui-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow: auto;
+}
+
+.ui-selectmenu-open {
+  display: block;
+}
+
+.ui-selectmenu-button {
+	color: #fff;
+	cursor: pointer;
+	outline: 0;
+}
+
+.ui-selectmenu-button.ui-corner-top .ui-icon-triangle-1-s {
+  transform: rotate(-180deg);
+}
+
+.ui-selectmenu-button .ui-icon-triangle-1-s {
+	background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-254 408.9 42 24" fill="#47474e"><path d="M-212 411.9c0-1.7-1.3-3-3-3-.8 0-1.5.3-2.1.8l-15.9 15.9-15.7-15.7c-.5-.6-1.4-1-2.3-1-1.7 0-3 1.3-3 3 0 .8.3 1.5.8 2.1l18 18c.5.6 1.3.9 2.2.9.8 0 1.6-.4 2.2-.9l18-18c.5-.6.8-1.3.8-2.1z"/></svg>')
+		50% / 14px no-repeat;
+	float: right;
+	height: 14px;
+	margin-top: 5px;
+	transform-origin: 50%;
+	transition: transform 0.3s;
+	width: 14px;
+}
