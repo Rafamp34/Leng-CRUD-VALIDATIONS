@@ -63,7 +63,6 @@ input:focus, input:not(:focus) {
 body {
 	background-color: var(--base-bgcolor);
 	background-image: var(--background-image);
-	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	color: var(--base-color);
